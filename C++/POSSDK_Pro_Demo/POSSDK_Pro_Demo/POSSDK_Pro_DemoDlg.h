@@ -57,6 +57,8 @@ public:
 	afx_msg void OnCbnEditchangeCombo3();
 	afx_msg void OnBnClickedButtonEu();//Enumerate printer list
 	afx_msg void OnBnClickedButtonEe();//Enumerate printer list
-	afx_msg void OnBnClickedButton5();//Barcode print sample
-	afx_msg void OnBnClickedButton6();//Image print sample
+	afx_msg void OnBnClickedButtonSupermarket();
+	afx_msg void OnBnClickedButtonBankQueue();
+	afx_msg void OnBnClickedButtonMovieTicket();
+	afx_msg void OnBnClickedButtonTrafficTicket();
 };

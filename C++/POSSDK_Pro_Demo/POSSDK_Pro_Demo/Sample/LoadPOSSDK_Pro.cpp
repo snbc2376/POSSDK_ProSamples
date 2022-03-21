@@ -7,7 +7,7 @@ pQueryStatus mQueryStatus = NULL;
 pPaperCut mPaperCut = NULL;
 pFeedLines mFeedLines = NULL;
 pEnumDevice mEnumDevice = NULL;
-pBarcodePrint mBarCodePrint = NULL;
+pBarCodePrint mBarCodePrint = NULL;
 pPrintImageFile mPrintImageFile = NULL;
 pPrintDownloadedImage mPrintDownloadedImage = NULL;
 pDownloadImage mDownloadImage = NULL;
@@ -111,7 +111,7 @@ int LoadFunc()
 		return Tool_LoadError();
 	}
 
-	mBarCodePrint = (pBarcodePrint)Tool_LoadFunc("BarCodePrint");
+	mBarCodePrint = (pBarCodePrint)Tool_LoadFunc("BarCodePrint");
 	if (mBarCodePrint == NULL)
 	{
 		return Tool_LoadError();

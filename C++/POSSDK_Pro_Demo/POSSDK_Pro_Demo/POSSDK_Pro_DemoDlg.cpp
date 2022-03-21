@@ -12,9 +12,11 @@
 #include "Sample/LoadPOSSDK_Pro.h"
 #include "Sample/SampleAPI.h"
 #include "Sample/SampleRestaurant.h"
-#include "Sample/SampleBarcode.h"
-#include "Sample/SampleImage.h"
 #include "Sample/SampleXML.h"
+#include "Sample/SampleSupermarket.h"
+#include "Sample/SampleBankQueue.h"
+#include "Sample/SampleTrafficTicket.h"
+#include "Sample/SampleMovieTicket.h"
 
 using namespace std;
 
@@ -50,8 +52,10 @@ ON_CBN_EDITCHANGE(IDC_COMBO2, &CPOSSDK_PRO_DemoDlg::OnCbnEditchangeCombo2)
 ON_CBN_EDITCHANGE(IDC_COMBO3, &CPOSSDK_PRO_DemoDlg::OnCbnEditchangeCombo3)
 ON_BN_CLICKED(IDC_BUTTON_EU, &CPOSSDK_PRO_DemoDlg::OnBnClickedButtonEu)
 ON_BN_CLICKED(IDC_BUTTON_EE, &CPOSSDK_PRO_DemoDlg::OnBnClickedButtonEe)
-ON_BN_CLICKED(IDC_BUTTON5, &CPOSSDK_PRO_DemoDlg::OnBnClickedButton5)
-ON_BN_CLICKED(IDC_BUTTON6, &CPOSSDK_PRO_DemoDlg::OnBnClickedButton6)
+ON_BN_CLICKED(IDC_BUTTON_SUPERMARKET, &CPOSSDK_PRO_DemoDlg::OnBnClickedButtonSupermarket)
+ON_BN_CLICKED(IDC_BUTTON_BANK_QUEUE, &CPOSSDK_PRO_DemoDlg::OnBnClickedButtonBankQueue)
+ON_BN_CLICKED(IDC_BUTTON_MOVIE_TICKET, &CPOSSDK_PRO_DemoDlg::OnBnClickedButtonMovieTicket)
+ON_BN_CLICKED(IDC_BUTTON_TRAFFIC_TICKET, &CPOSSDK_PRO_DemoDlg::OnBnClickedButtonTrafficTicket)
 END_MESSAGE_MAP()
 
 
@@ -494,28 +498,97 @@ void CPOSSDK_PRO_DemoDlg::OnBnClickedButtonEe()
 }
 
 
-void CPOSSDK_PRO_DemoDlg::OnBnClickedButton5()
+
+void CPOSSDK_PRO_DemoDlg::OnBnClickedButtonSupermarket()
 {
 	char errorStatus[128] = { 0 };
-	int nRet = Sample_PrintBarCode(m_printerHandle);
+	int nRet = SUCCESS;
+	nRet = Sample_Supermarket(m_printerHandle, errorStatus);
 	if (nRet != 0)
 	{
 		CString errorStr;
-		errorStr.Format(_T("Print error.\nErrorCode [%d]\n"), nRet);
+		errorStr.Format(_T("Print error.\nErrorCode [%d]\nPrinter Status [ %hs ]"), nRet, errorStatus);
+		MessageBox(errorStr);
+		return;
+	}
+
+	nRet = Sample_Supermarket_En(m_printerHandle, errorStatus);
+	if (nRet != 0)
+	{
+		CString errorStr;
+		errorStr.Format(_T("Print error.\nErrorCode [%d]\nPrinter Status [ %hs ]"), nRet, errorStatus);
 		MessageBox(errorStr);
 		return;
 	}
 }
 
 
-void CPOSSDK_PRO_DemoDlg::OnBnClickedButton6()
+void CPOSSDK_PRO_DemoDlg::OnBnClickedButtonBankQueue()
 {
 	char errorStatus[128] = { 0 };
-	int nRet = Sample_PrintImage(m_printerHandle);
+	int nRet = SUCCESS;
+	nRet = Sample_BankQueue(m_printerHandle, errorStatus);
 	if (nRet != 0)
 	{
 		CString errorStr;
-		errorStr.Format(_T("Print error.\nErrorCode [%d]\n"), nRet);
+		errorStr.Format(_T("Print error.\nErrorCode [%d]\nPrinter Status [ %hs ]"), nRet, errorStatus);
+		MessageBox(errorStr);
+		return;
+	}
+
+	nRet = Sample_BankQueue_En(m_printerHandle, errorStatus);
+	if (nRet != 0)
+	{
+		CString errorStr;
+		errorStr.Format(_T("Print error.\nErrorCode [%d]\nPrinter Status [ %hs ]"), nRet, errorStatus);
+		MessageBox(errorStr);
+		return;
+	}
+}
+
+
+void CPOSSDK_PRO_DemoDlg::OnBnClickedButtonMovieTicket()
+{
+	char errorStatus[128] = { 0 };
+	int nRet = SUCCESS;
+	nRet = Sample_MovieTicket(m_printerHandle, errorStatus);
+	if (nRet != 0)
+	{
+		CString errorStr;
+		errorStr.Format(_T("Print error.\nErrorCode [%d]\nPrinter Status [ %hs ]"), nRet, errorStatus);
+		MessageBox(errorStr);
+		return;
+	}
+
+	nRet = Sample_MovieTicket_En(m_printerHandle, errorStatus);
+	if (nRet != 0)
+	{
+		CString errorStr;
+		errorStr.Format(_T("Print error.\nErrorCode [%d]\nPrinter Status [ %hs ]"), nRet, errorStatus);
+		MessageBox(errorStr);
+		return;
+	}
+}
+
+
+void CPOSSDK_PRO_DemoDlg::OnBnClickedButtonTrafficTicket()
+{
+	char errorStatus[128] = { 0 };
+	int nRet = SUCCESS;
+	nRet = Sample_TrafficTicket(m_printerHandle, errorStatus);
+	if (nRet != 0)
+	{
+		CString errorStr;
+		errorStr.Format(_T("Print error.\nErrorCode [%d]\nPrinter Status [ %hs ]"), nRet, errorStatus);
+		MessageBox(errorStr);
+		return;
+	}
+
+	nRet = Sample_TrafficTicket_En(m_printerHandle, errorStatus);
+	if (nRet != 0)
+	{
+		CString errorStr;
+		errorStr.Format(_T("Print error.\nErrorCode [%d]\nPrinter Status [ %hs ]"), nRet, errorStatus);
 		MessageBox(errorStr);
 		return;
 	}

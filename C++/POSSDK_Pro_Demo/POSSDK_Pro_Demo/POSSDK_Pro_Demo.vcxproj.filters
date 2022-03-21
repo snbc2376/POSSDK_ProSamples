@@ -45,13 +45,19 @@
     <ClInclude Include="Sample\SampleRestaurant.h">
       <Filter>Sample</Filter>
     </ClInclude>
-    <ClInclude Include="Sample\SampleBarcode.h">
-      <Filter>Sample</Filter>
-    </ClInclude>
-    <ClInclude Include="Sample\SampleImage.h">
-      <Filter>Sample</Filter>
-    </ClInclude>
     <ClInclude Include="Sample\SampleXML.h">
+      <Filter>Sample</Filter>
+    </ClInclude>
+    <ClInclude Include="Sample\SampleSupermarket.h">
+      <Filter>Sample</Filter>
+    </ClInclude>
+    <ClInclude Include="Sample\SampleBankQueue.h">
+      <Filter>Sample</Filter>
+    </ClInclude>
+    <ClInclude Include="Sample\SampleTrafficTicket.h">
+      <Filter>Sample</Filter>
+    </ClInclude>
+    <ClInclude Include="Sample\SampleMovieTicket.h">
       <Filter>Sample</Filter>
     </ClInclude>
   </ItemGroup>
@@ -74,13 +80,19 @@
     <ClCompile Include="Sample\SampleRestaurant.cpp">
       <Filter>Sample</Filter>
     </ClCompile>
-    <ClCompile Include="Sample\SampleBarcode.cpp">
-      <Filter>Sample</Filter>
-    </ClCompile>
-    <ClCompile Include="Sample\SampleImage.cpp">
-      <Filter>Sample</Filter>
-    </ClCompile>
     <ClCompile Include="Sample\SampleXML.cpp">
+      <Filter>Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample\SampleSupermarket.cpp">
+      <Filter>Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample\SampleBankQueue.cpp">
+      <Filter>Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample\SampleTrafficTicket.cpp">
+      <Filter>Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample\SampleMovieTicket.cpp">
       <Filter>Sample</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,7 +8,7 @@ extern pQueryStatus mQueryStatus;
 extern pPaperCut mPaperCut;
 extern pFeedLines mFeedLines;
 extern pEnumDevice mEnumDevice;
-extern pBarcodePrint mBarCodePrint;
+extern pBarCodePrint mBarCodePrint;
 
 int Sample_Open(char *model, char *portInfo)
 {

@@ -47,7 +47,7 @@ typedef int (POSSDK_PROCALL_MODE *pQueryStatus)(int handle, char* status);
 typedef int (POSSDK_PROCALL_MODE *pPaperCut)(int handle, int cutMode, int distance);
 typedef int (POSSDK_PROCALL_MODE *pFeedLines)(int handle, int line);
 typedef int (POSSDK_PROCALL_MODE *pEnumDevice)(int portType, char* deviceInfo, int deviceInfoLen);
-typedef int (POSSDK_PROCALL_MODE *pBarcodePrint)(int devHandle, int type, char* data, int dataLen, char *format);
+typedef int (POSSDK_PROCALL_MODE *pBarCodePrint)(int devHandle, int type, char* data, int dataLen, char *format);
 typedef int (POSSDK_PROCALL_MODE *pPrintImageFile)(int devHandle, char *Image, char *format);
 typedef int (POSSDK_PROCALL_MODE  *pPrintDownloadedImage)(int devHandle, int Type, int ImageID, char *format);
 typedef int (POSSDK_PROCALL_MODE *pDownloadImage)(int devHandle, int Type, char *ImageList, char *format);

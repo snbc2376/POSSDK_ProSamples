@@ -80,7 +80,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\Libs\x64</OutDir>
+    <OutDir>$(SolutionDir)..\..\Libs\x64</OutDir>
     <TargetName>POSSDK_Pro_Demo_VC</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -90,7 +90,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)..\Libs\x64</OutDir>
+    <OutDir>$(SolutionDir)..\..\Libs\x64</OutDir>
     <TargetName>POSSDK_Pro_Demo_VC</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -206,9 +206,11 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Sample\LoadPOSSDK_Pro.h" />
     <ClInclude Include="Sample\SampleAPI.h" />
-    <ClInclude Include="Sample\SampleBarcode.h" />
-    <ClInclude Include="Sample\SampleImage.h" />
+    <ClInclude Include="Sample\SampleBankQueue.h" />
+    <ClInclude Include="Sample\SampleMovieTicket.h" />
     <ClInclude Include="Sample\SampleRestaurant.h" />
+    <ClInclude Include="Sample\SampleSupermarket.h" />
+    <ClInclude Include="Sample\SampleTrafficTicket.h" />
     <ClInclude Include="Sample\SampleXML.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -222,15 +224,13 @@
     <ClCompile Include="Sample\SampleAPI.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Sample\SampleBarcode.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Sample\SampleImage.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="Sample\SampleBankQueue.cpp" />
+    <ClCompile Include="Sample\SampleMovieTicket.cpp" />
     <ClCompile Include="Sample\SampleRestaurant.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Sample\SampleSupermarket.cpp" />
+    <ClCompile Include="Sample\SampleTrafficTicket.cpp" />
     <ClCompile Include="Sample\SampleXML.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
