@@ -14,7 +14,7 @@ int Sample_Restaurant(int handle, char *errorStatus)
 
 	// check status
 	nStatus = mQueryStatus(handle, cStatus);
-	if (!strcmp(cStatus, "Normal") == 0)
+	if (!strcmp(cStatus, "Normal") == 0 && !strcmp(cStatus, "PaperNearEnd") == 0)
 	{
 		strcpy(errorStatus, cStatus);
 		return nStatus;
@@ -55,7 +55,7 @@ int Sample_Restaurant(int handle, char *errorStatus)
 	
 	// check status
 	nStatus = mQueryStatus(handle, cStatus);
-	if (!strcmp(cStatus, "Normal") == 0)
+	if (!strcmp(cStatus, "Normal") == 0 && !strcmp(cStatus, "PaperNearEnd") == 0)
 	{
 		strcpy(errorStatus, cStatus);
 		return nStatus;
@@ -72,7 +72,7 @@ int Sample_Restaurant_En(int handle, char *errorStatus)
 
 	// check status
 	nStatus = mQueryStatus(handle, cStatus);
-	if (!strcmp(cStatus, "Normal") == 0)
+	if (!strcmp(cStatus, "Normal") == 0 && !strcmp(cStatus, "PaperNearEnd") == 0)
 	{
 		strcpy(errorStatus, cStatus);
 		return nStatus;
@@ -119,7 +119,7 @@ int Sample_Restaurant_En(int handle, char *errorStatus)
 
 	// check status
 	nStatus = mQueryStatus(handle, cStatus);
-	if (!strcmp(cStatus, "Normal") == 0)
+	if (!strcmp(cStatus, "Normal") == 0 && !strcmp(cStatus, "PaperNearEnd") == 0)
 	{
 		strcpy(errorStatus, cStatus);
 		return nStatus;

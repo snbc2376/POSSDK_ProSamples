@@ -219,8 +219,10 @@ void CPOSSDK_PRO_DemoDlg::initUIValue()
 
 	// Button
 	((CButton*)GetDlgItem(IDC_BUTTON2))->EnableWindow(FALSE);
-	((CButton*)GetDlgItem(IDC_BUTTON5))->EnableWindow(FALSE);
-	((CButton*)GetDlgItem(IDC_BUTTON6))->EnableWindow(FALSE);
+	((CButton*)GetDlgItem(IDC_BUTTON_SUPERMARKET))->EnableWindow(FALSE);
+	((CButton*)GetDlgItem(IDC_BUTTON_BANK_QUEUE))->EnableWindow(FALSE);
+	((CButton*)GetDlgItem(IDC_BUTTON_MOVIE_TICKET))->EnableWindow(FALSE);
+	((CButton*)GetDlgItem(IDC_BUTTON_TRAFFIC_TICKET))->EnableWindow(FALSE);
 }
 
 void CPOSSDK_PRO_DemoDlg::getModelAndIdFromIni()
@@ -360,8 +362,10 @@ void CPOSSDK_PRO_DemoDlg::OnBnClickedButton1()
 
 		((CButton*)GetDlgItem(IDC_BUTTON1))->SetWindowText(_T("Disconnect Printer"));
 		((CButton*)GetDlgItem(IDC_BUTTON2))->EnableWindow(TRUE);
-		((CButton*)GetDlgItem(IDC_BUTTON5))->EnableWindow(TRUE);
-		((CButton*)GetDlgItem(IDC_BUTTON6))->EnableWindow(TRUE);
+		((CButton*)GetDlgItem(IDC_BUTTON_SUPERMARKET))->EnableWindow(TRUE);
+		((CButton*)GetDlgItem(IDC_BUTTON_BANK_QUEUE))->EnableWindow(TRUE);
+		((CButton*)GetDlgItem(IDC_BUTTON_MOVIE_TICKET))->EnableWindow(TRUE);
+		((CButton*)GetDlgItem(IDC_BUTTON_TRAFFIC_TICKET))->EnableWindow(TRUE);
 	}
 	else if (currentStatus.Compare(_T("Disconnect Printer")) == 0)
 	{
@@ -371,8 +375,10 @@ void CPOSSDK_PRO_DemoDlg::OnBnClickedButton1()
 		}
 		((CButton*)GetDlgItem(IDC_BUTTON1))->SetWindowText(_T("Connect Printer"));
 		((CButton*)GetDlgItem(IDC_BUTTON2))->EnableWindow(FALSE);
-		((CButton*)GetDlgItem(IDC_BUTTON5))->EnableWindow(FALSE);
-		((CButton*)GetDlgItem(IDC_BUTTON6))->EnableWindow(FALSE);
+		((CButton*)GetDlgItem(IDC_BUTTON_SUPERMARKET))->EnableWindow(FALSE);
+		((CButton*)GetDlgItem(IDC_BUTTON_BANK_QUEUE))->EnableWindow(FALSE);
+		((CButton*)GetDlgItem(IDC_BUTTON_MOVIE_TICKET))->EnableWindow(FALSE);
+		((CButton*)GetDlgItem(IDC_BUTTON_TRAFFIC_TICKET))->EnableWindow(FALSE);
 	}
 }
 

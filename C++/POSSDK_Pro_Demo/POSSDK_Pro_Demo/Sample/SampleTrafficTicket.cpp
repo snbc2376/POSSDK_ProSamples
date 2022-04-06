@@ -16,7 +16,7 @@ int Sample_TrafficTicket(int handle, char *errorStatus)
 
 	//打印前查下状态
 	nStatus = mQueryStatus(handle, cStatus);
-	if (!strcmp(cStatus, "Normal") == 0)
+	if (!strcmp(cStatus, "Normal") == 0 && !strcmp(cStatus, "PaperNearEnd") == 0)
 	{
 		strcpy(errorStatus, cStatus);
 		return nStatus;
@@ -31,11 +31,11 @@ int Sample_TrafficTicket(int handle, char *errorStatus)
 	nRet = mPrintText(handle, "2021年05月20日21时03分\n", "");
 	nRet = mPrintText(handle, "违法停车地点：\n", "");
 	nRet = mPrintText(handle, "环阳路全路段\n", "");
-	nRet = mPrintText(handle, "		该机动车在上述时间、地点停放，违反了《道路交通安全法》第56条的规定，请\
+	nRet = mPrintText(handle, "   该机动车在上述时间、地点停放，违反了《道路交通安全法》第56条的规定，请\
 于3日后15日内持本告知单，到各辖区交警大队交通违法处理窗口接受处理。\n", "");
 	mFeedLines(handle, 1);
 	//居中打印印章
-	nRet = mPrintImageFile(handle, "../../resource/01.bmp", "x=-2");
+	nRet = mPrintImageFile(handle, "../../resource/cachet.jpg", "x=-2");
 	nRet = mPrintText(handle, "2021年5月20日\n", "Align=2");
 	nRet = mPrintText(handle, "备注：机动车所有人登记的住所地址或者联系电话发生变化的，请\
 及时向登记地车辆管理所申请变更备案。\n", "Align=0");
@@ -44,7 +44,7 @@ int Sample_TrafficTicket(int handle, char *errorStatus)
 	
 	//查状态
 	nStatus = mQueryStatus(handle, cStatus);
-	if (!strcmp(cStatus, "Normal") == 0)
+	if (!strcmp(cStatus, "Normal") == 0 && !strcmp(cStatus, "PaperNearEnd") == 0)
 	{
 		strcpy(errorStatus, cStatus);
 		return nStatus;
@@ -61,28 +61,32 @@ int Sample_TrafficTicket_En(int handle, char *errorStatus)
 
 	// check status
 	nStatus = mQueryStatus(handle, cStatus);
-	if (!strcmp(cStatus, "Normal") == 0)
+	if (!strcmp(cStatus, "Normal") == 0 && !strcmp(cStatus, "PaperNearEnd") == 0)
 	{
 		strcpy(errorStatus, cStatus);
 		return nStatus;
 	}
 
 	//logo
-	nRet = mPrintImageFile(handle, "../../resource/01.bmp", "x=-2");
+	nRet = mPrintImageFile(handle, "../../resource/northern.jpg", "x=-2");
 
 	// Sample
-	nRet = mPrintText(handle, "Penalty Fare Notice\n", "Bold=1|HScale=3|VScale=3");
+	nRet = mPrintText(handle, "Penalty Fare Notice\n", "Bold=1|HScale=2|VScale=2");
 	nRet = mPrintText(handle, "APNRFN000021005\n", "");
 	nRet = mPrintText(handle, "Amount Due:$20.00\n", "");
-	nRet = mPrintText(handle, "This Penalty Fare Notice is given in accordance with the\
-Penalty Faare Regulations 2018.\n", "Bold=0|HScale=1|VScale=1");
-	nRet = mPrintText(handle, "Importance:Please quote the above Penalty Fare Notice number in all commucations\n", "");
+	nRet = mPrintText(handle, "\n", "");
+	nRet = mPrintText(handle, " This Penalty Fare Notice is given in accordance with the\
+ Penalty Faare Regulations 2018.\n", "Bold=0|HScale=1|VScale=1");
+	nRet = mPrintText(handle, "\n", "");
+	nRet = mPrintText(handle, "Important:Please quote the above Penalty Fare    Notice number in all commucations\n", "");
+	nRet = mPrintText(handle, "\n", "");
 	nRet = mPrintText(handle, "Date/Time:10/09/2018 07:54\n", "");
 	nRet = mPrintText(handle, "Issued at:Liverpool lime Street\n", "");
 	nRet = mPrintText(handle, "Issued on:\n", "");
 	nRet = mPrintText(handle, "Issue Reason:No Ticket\n", "");
 	nRet = mPrintText(handle, "Grounds Info:\n", "");
-	nRet = mPrintText(handle, "From Wavertree Tech Park To Liverpool Lime Street\n", "");
+	nRet = mPrintText(handle, "From Wavertree Tech Park\n", "");
+	nRet = mPrintText(handle, "To Liverpool Lime Street\n", "");
 	nRet = mPrintText(handle, "Class of Travel:Standard Class\n", "");
 	nRet = mPrintText(handle, "Name:Mr Richerd Clark\n", "");
 	nRet = mPrintText(handle, "Address:City\n", "");
@@ -93,13 +97,13 @@ Penalty Faare Regulations 2018.\n", "Bold=0|HScale=1|VScale=1");
 	nRet = mPrintText(handle, "Amount Paid:$0.00\n", "");
 	nRet = mPrintText(handle, "Amount Due:$20.00\n", "");
 	nRet = mPrintText(handle, "This notice must be paid within 21 days beginning with \
-the day following the day on which the notice is charged:\n", "");
+the day following the day on which the     notice is charged:\n", "");
 	nRet = mPrintText(handle, "01/10/2018\n", "");
 	nRet = mPaperCut(handle, 0, 0);
 
 	// check status
 	nStatus = mQueryStatus(handle, cStatus);
-	if (!strcmp(cStatus, "Normal") == 0)
+	if (!strcmp(cStatus, "Normal") == 0 && !strcmp(cStatus, "PaperNearEnd") == 0)
 	{
 		strcpy(errorStatus, cStatus);
 		return nStatus;
